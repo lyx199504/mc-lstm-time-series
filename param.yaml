@@ -1,0 +1,27 @@
+# 文件夹
+dir:
+  model_dir: ./model  # 模型文件夹
+  log_dir: ./log  # 日志文件夹
+
+# 自定义超参数
+cus_param:
+  seed: 1  # 随机种子
+
+# 贝叶斯搜索超参数
+bys_param:
+  n_iter: 10  # 迭代次数
+  fold: 3  # 交叉验证折数
+  workers: 3  # 进程个数
+
+# 交叉验证参数
+cv_param:
+  fold: 10
+  workers: 1
+
+# 模型超参数
+model:
+  - [lr, {
+      max_iter: !!python/tuple [50, 200],
+      C: !!python/tuple [0.8, 1.2, 'uniform'],
+      random_state: !!python/tuple [1, 500],
+  }]

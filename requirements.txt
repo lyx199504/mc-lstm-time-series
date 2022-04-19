@@ -1,0 +1,6 @@
+numpy
+pandas
+scikit-learn
+scikit-optimize
+pyaml
+torch==1.7.1; python_version==3.7
