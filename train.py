@@ -10,13 +10,13 @@ from dataPreprocessing import getDataset, standard
 from optUtils import yaml_config
 from optUtils.dataUtil import stratified_shuffle_index
 
-from cnn import CNN
-from ms_cnn import MS_CNN
-from c_lstm import C_LSTM
-from c_lstm_ae import C_LSTM_AE
-from imc_lstm import IMC_LSTM
-from smc_lstm import SMC_LSTM
-from cmc_lstm import CMC_LSTM
+from dl_models.cnn import CNN
+from dl_models.ms_cnn import MS_CNN
+from dl_models.c_lstm import C_LSTM
+from dl_models.c_lstm_ae import C_LSTM_AE
+from dl_models.imc_lstm import IMC_LSTM
+from dl_models.smc_lstm import SMC_LSTM
+from dl_models.cmc_lstm import CMC_LSTM
 
 if __name__ == "__main__":
     seq_len = 60

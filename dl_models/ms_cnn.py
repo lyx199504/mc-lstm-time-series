@@ -5,7 +5,7 @@
 import torch
 from torch import nn
 
-from c_lstm import C_LSTM
+from dl_models.c_lstm import C_LSTM
 
 
 class MS_CNN(C_LSTM):
