@@ -52,7 +52,7 @@ class C_LSTM(DeepLearningClassifier):
     #     return super().fit_step(X, y_, train)
 
     # 测试数据，将验证集中前k个最高分数的模型用于测试，最终分数为k个测试分数的均值
-    def test_score(self, X, y, k=10):
+    def test_score(self, X, y, k=1):
         model_param_list = get_rank_param(
             self.model_name,
             key_list=['best_score_', 'train_score', 'epoch'],
