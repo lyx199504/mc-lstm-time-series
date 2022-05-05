@@ -52,10 +52,10 @@ def getNabDataset(dataset_name, seq_len=50, move_pace=1, pre_list=(standard,), d
         for pre in pre_list:
             raw_value = pre(raw_value)
         raw_data['label'] = 0
-        # for window in windows[dataset_name + "/%s" % str(path).split('\\')[-1]]:
+        # for window in windows[dataset_name + "/%s" % path.name]:
         #     start, end = window[0].split('.')[0], window[1].split('.')[0]
         #     raw_data.loc[start: end, 'label'] = 1
-        for timestamp in labels[dataset_name + "/%s" % str(path).split('\\')[-1]]:
+        for timestamp in labels[dataset_name + "/%s" % path.name]:
             raw_data.loc[timestamp, 'label'] = 1
 
         # 构造时间序列特征

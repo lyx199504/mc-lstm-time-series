@@ -35,6 +35,8 @@ def ml_train(X, y, X_test, y_test, model_name, model_param={}, metrics_list=(), 
     if model is None:
         model = model_selection(model_name, **model_param)
 
+    start_time = time.time()
+
     model.fit(X, y)
 
     # 获取评价指标
@@ -47,8 +49,6 @@ def ml_train(X, y, X_test, y_test, model_name, model_param={}, metrics_list=(), 
             return score_list
         score_list.append(mdl.score(X, y))
         return score_list
-
-    start_time = time.time()
 
     train_score_list = get_score(model, X, y)
     train_score_dict = {metrics.__name__: train_score for metrics, train_score in zip(metrics_list, train_score_list)}
