@@ -15,25 +15,25 @@ class SMC_LSTM(C_LSTM):
         self.model_name = "smc_lstm"
 
     def create_model(self):
-        c_lstm_num, c_lstm_hidden_size = 3, 64
+        conv_type, conv_num = 3, 64
         self.cnn_list = nn.ModuleList([])
-        for i in range(c_lstm_num):
+        for i in range(conv_type):
             kernel_size = i*2 + 1
             padding = i
             pooling_size = 3
             self.cnn_list.append(
                 nn.Sequential(
-                    nn.Conv1d(1, c_lstm_hidden_size, kernel_size=kernel_size, stride=1, padding=padding),
+                    nn.Conv1d(1, conv_num, kernel_size=kernel_size, stride=1, padding=padding),
                     nn.Tanh(),
                     nn.MaxPool1d(kernel_size=pooling_size, stride=pooling_size),
                 )
             )
-        self.lstm = nn.LSTM(input_size=c_lstm_hidden_size, hidden_size=c_lstm_hidden_size)
+        self.lstm = nn.LSTM(input_size=conv_num, hidden_size=conv_num)
         self.dnn = nn.Sequential(
             nn.Dropout(p=0.2),
-            nn.Linear(in_features=c_lstm_num*c_lstm_hidden_size, out_features=c_lstm_hidden_size),
+            nn.Linear(in_features=conv_type*conv_num, out_features=conv_num),
             nn.Tanh(),
-            nn.Linear(in_features=c_lstm_hidden_size, out_features=self.label_num),
+            nn.Linear(in_features=conv_num, out_features=self.label_num),
         )
 
     def forward(self, X):
