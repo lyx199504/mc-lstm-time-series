@@ -1,6 +1,6 @@
 # mc-lstm-time-series
-本项目是论文《Anomaly Detection Using Multi-scale C-LSTM for Univariate Time-series》的实验代码，实现了多种时间序列异常检测模型。<br>
-This project is the experimental code of the paper "*Anomaly Detection Using Multi-scale C-LSTM for Univariate Time-series*", which implements a variety of time series anomaly detection models.
+本项目是论文《[Anomaly Detection Using Multiscale C-LSTM for Univariate Time-Series](https://www.hindawi.com/journals/scn/2023/6597623/)》的实验代码，实现了多种时间序列异常检测模型。<br>
+This project is the experimental code of the paper "*[Anomaly Detection Using Multiscale C-LSTM for Univariate Time-Series](https://www.hindawi.com/journals/scn/2023/6597623/)*", which implements a variety of time series anomaly detection models.
 
 ## 目录 Table of Contents
 
@@ -62,5 +62,12 @@ The experimental code is based on the param-opt training tool. The author and so
 若要引用本论文，可按照如下latex引用格式：<br>
 If you want to cite this paper, you could use the following latex citation format:
 
-    To be determined...
+    @article{lu2023anomaly,
+        title={Anomaly Detection Using Multiscale C-LSTM for Univariate Time-Series},
+        author={Lu, Yi-Xiang and Jin, Xiao-Bo and Liu, Dong-Jie and Zhang, Xin-Chang and Geng, Guang-Gang and others},
+        journal={Security and Communication Networks},
+        volume={2023},
+        year={2023},
+        publisher={Hindawi}
+    }
 
